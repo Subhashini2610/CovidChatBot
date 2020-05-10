@@ -9,6 +9,8 @@
 import UIKit
 import CSVImporter
 
+//TODO: loader to be seen initially
+
 enum SenderType {
     case user
     case computer
@@ -19,8 +21,11 @@ class ViewController: UIViewController {
     var recordsArray = Array<Any>()
     var data = Array<[SenderType: Any]>()
     
+    @IBOutlet weak var bottomEditView: UIVisualEffectView!
     @IBOutlet weak var loaderView: LoaderView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var btnSend: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +68,10 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func btnSendPressed(_ sender: Any) {
+    }
+    
+    
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -97,6 +106,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+    
+}
+
+extension ViewController: UITextFieldDelegate {
     
 }
 

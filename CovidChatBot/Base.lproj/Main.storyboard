@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,21 +12,21 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CovidChatBot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zn3-ba-IS7">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H0k-bB-g9x" customClass="LoaderView" customModule="CovidChatBot" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <subviews>
                                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="I19-PT-mcu">
-                                                <rect key="frame" x="0.0" y="327" width="414" height="164"/>
+                                                <rect key="frame" x="0.0" y="227" width="320" height="114"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </activityIndicatorView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading Covid 19 Info... Might take around 10 sec..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0C-ei-ULv">
-                                                <rect key="frame" x="0.0" y="164.5" width="414" height="122.5"/>
+                                                <rect key="frame" x="0.0" y="102" width="320" height="85"/>
                                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -45,21 +45,21 @@
                                         </constraints>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="94m-Xf-iOp">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                     </imageView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fYJ-qD-L7i">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="498"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserCell" rowHeight="124" id="o3o-m9-ew8" customClass="UserTableViewCell" customModule="CovidChatBot" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="414" height="124"/>
+                                                <rect key="frame" x="0.0" y="28" width="320" height="124"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o3o-m9-ew8" id="dBw-no-8GB">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="124"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="124"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label afdgd jeyfdb sjdggd shdbd dkjfhgd Label afdgd jeyfdb sjdggd shdbd dkjfhgd Label afdgd jeyfdb sjdggd shdbd dkjfhgd" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wdy-Sd-zVc" customClass="PaddedLabel" customModule="CovidChatBot" customModuleProvider="target">
-                                                            <rect key="frame" x="187" y="20" width="207" height="84"/>
+                                                            <rect key="frame" x="140" y="20" width="160" height="84"/>
                                                             <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -78,14 +78,14 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ComputerCell" rowHeight="138" id="iei-23-0jS" customClass="ComputerTableViewCell" customModule="CovidChatBot" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="152" width="414" height="138"/>
+                                                <rect key="frame" x="0.0" y="152" width="320" height="138"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iei-23-0jS" id="BDq-YJ-e0i">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="138"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="138"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKw-MD-7X1" customClass="PaddedLabel" customModule="CovidChatBot" customModuleProvider="target">
-                                                            <rect key="frame" x="20" y="20" width="207" height="98"/>
+                                                            <rect key="frame" x="20" y="20" width="160" height="98"/>
                                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <string key="text">Label afdgd jeyfdb sjdggd shdbd dkjfhgd Label afdgd jeyfdb sjdggd shdbd dkjfhgd Label afdgd jeyfdb sjdggd shdbd dkjfhgd Label afdgd jeyfdb sjdggd shdbd dkjfhgd Label afdgd jeyfdb sjdggd shdbd dkjfhgd Label afdgd jeyfdb sjdggd shdbd dkjfhgd</string>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -106,21 +106,64 @@
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
+                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uJX-W8-24W" userLabel="BottomEditView">
+                                        <rect key="frame" x="0.0" y="498" width="320" height="70"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9k7-Nh-QK0">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sc2-Ag-Prr">
+                                                    <rect key="frame" x="16" y="16" width="222" height="38"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="38" id="peK-dn-1lu"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yh2-N4-fao">
+                                                    <rect key="frame" x="254" y="20" width="50" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="cLI-EM-bbi"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <state key="normal" title="SEND"/>
+                                                    <connections>
+                                                        <action selector="btnSendPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7c2-AV-UtL"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Yh2-N4-fao" firstAttribute="centerY" secondItem="Sc2-Ag-Prr" secondAttribute="centerY" id="EcD-0j-XHT"/>
+                                                <constraint firstItem="Yh2-N4-fao" firstAttribute="height" secondItem="Sc2-Ag-Prr" secondAttribute="height" multiplier="0.789474" id="WTz-W4-YCF"/>
+                                                <constraint firstItem="Sc2-Ag-Prr" firstAttribute="leading" secondItem="9k7-Nh-QK0" secondAttribute="leading" constant="16" id="Wq7-b0-XuS"/>
+                                                <constraint firstItem="Yh2-N4-fao" firstAttribute="centerY" secondItem="9k7-Nh-QK0" secondAttribute="centerY" id="f5T-yg-y2B"/>
+                                                <constraint firstItem="Yh2-N4-fao" firstAttribute="leading" secondItem="Sc2-Ag-Prr" secondAttribute="trailing" constant="16" id="t4L-M1-76u"/>
+                                                <constraint firstAttribute="trailing" secondItem="Yh2-N4-fao" secondAttribute="trailing" constant="16" id="twX-Rk-PkZ"/>
+                                            </constraints>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="gfC-C8-UgO"/>
+                                        </constraints>
+                                        <blurEffect style="regular"/>
+                                    </visualEffectView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstItem="uJX-W8-24W" firstAttribute="top" secondItem="fYJ-qD-L7i" secondAttribute="bottom" id="0Nl-GS-nt4"/>
                                     <constraint firstAttribute="trailing" secondItem="94m-Xf-iOp" secondAttribute="trailing" id="AiQ-Up-KoA"/>
-                                    <constraint firstAttribute="bottom" secondItem="94m-Xf-iOp" secondAttribute="bottom" id="Bcc-eP-FNl"/>
                                     <constraint firstAttribute="trailing" secondItem="fYJ-qD-L7i" secondAttribute="trailing" id="Efo-6E-N3f"/>
                                     <constraint firstItem="fYJ-qD-L7i" firstAttribute="top" secondItem="zn3-ba-IS7" secondAttribute="top" id="FBl-OI-xxn"/>
                                     <constraint firstItem="H0k-bB-g9x" firstAttribute="leading" secondItem="zn3-ba-IS7" secondAttribute="leading" id="JMy-ht-Wgc"/>
                                     <constraint firstItem="fYJ-qD-L7i" firstAttribute="leading" secondItem="zn3-ba-IS7" secondAttribute="leading" id="NTh-84-JzR"/>
+                                    <constraint firstItem="uJX-W8-24W" firstAttribute="leading" secondItem="fYJ-qD-L7i" secondAttribute="leading" id="NVQ-4N-BV7"/>
                                     <constraint firstAttribute="bottom" secondItem="H0k-bB-g9x" secondAttribute="bottom" id="R2R-dx-M4m"/>
                                     <constraint firstItem="94m-Xf-iOp" firstAttribute="top" secondItem="zn3-ba-IS7" secondAttribute="top" id="Uhb-oL-1Y2"/>
-                                    <constraint firstAttribute="bottom" secondItem="fYJ-qD-L7i" secondAttribute="bottom" id="WWa-0m-chd"/>
                                     <constraint firstItem="94m-Xf-iOp" firstAttribute="leading" secondItem="zn3-ba-IS7" secondAttribute="leading" id="nLW-O1-U2w"/>
                                     <constraint firstItem="H0k-bB-g9x" firstAttribute="top" secondItem="zn3-ba-IS7" secondAttribute="top" id="pTw-t1-kwm"/>
+                                    <constraint firstAttribute="bottom" secondItem="uJX-W8-24W" secondAttribute="bottom" id="q1T-RI-EYX"/>
                                     <constraint firstAttribute="trailing" secondItem="H0k-bB-g9x" secondAttribute="trailing" id="uYm-IT-9Wn"/>
+                                    <constraint firstItem="94m-Xf-iOp" firstAttribute="bottom" secondItem="uJX-W8-24W" secondAttribute="bottom" id="vCg-uG-s0h"/>
+                                    <constraint firstItem="uJX-W8-24W" firstAttribute="trailing" secondItem="fYJ-qD-L7i" secondAttribute="trailing" id="wVV-17-DKh"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -134,8 +177,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="bottomEditView" destination="uJX-W8-24W" id="Dsa-oA-r1B"/>
+                        <outlet property="btnSend" destination="Yh2-N4-fao" id="Qsg-ZM-z3H"/>
                         <outlet property="loaderView" destination="H0k-bB-g9x" id="kh0-Wq-8rT"/>
                         <outlet property="tableView" destination="fYJ-qD-L7i" id="NJp-rs-gMy"/>
+                        <outlet property="textField" destination="Sc2-Ag-Prr" id="fm6-jV-7IL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
