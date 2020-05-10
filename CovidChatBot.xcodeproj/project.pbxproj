@@ -15,6 +15,7 @@
 		3022C75224682F7700D7A23F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3022C75024682F7700D7A23F /* LaunchScreen.storyboard */; };
 		3022C75C246832E600D7A23F /* CSVImporter in Frameworks */ = {isa = PBXBuildFile; productRef = 3022C75B246832E600D7A23F /* CSVImporter */; };
 		3022C75E246832FC00D7A23F /* Bing-COVID19-Data.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3022C75D246832FC00D7A23F /* Bing-COVID19-Data.csv */; };
+		3022C76024683C5A00D7A23F /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3022C75F24683C5A00D7A23F /* LoaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		3022C75124682F7700D7A23F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3022C75324682F7700D7A23F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3022C75D246832FC00D7A23F /* Bing-COVID19-Data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Bing-COVID19-Data.csv"; sourceTree = "<group>"; };
+		3022C75F24683C5A00D7A23F /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				3022C74724682F7100D7A23F /* SceneDelegate.swift */,
 				3022C74924682F7100D7A23F /* ViewController.swift */,
 				3022C74B24682F7100D7A23F /* Main.storyboard */,
+				3022C75F24683C5A00D7A23F /* LoaderView.swift */,
 				3022C74E24682F7700D7A23F /* Assets.xcassets */,
 				3022C75024682F7700D7A23F /* LaunchScreen.storyboard */,
 				3022C75324682F7700D7A23F /* Info.plist */,
@@ -159,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3022C74A24682F7100D7A23F /* ViewController.swift in Sources */,
+				3022C76024683C5A00D7A23F /* LoaderView.swift in Sources */,
 				3022C74624682F7100D7A23F /* AppDelegate.swift in Sources */,
 				3022C74824682F7100D7A23F /* SceneDelegate.swift in Sources */,
 			);
