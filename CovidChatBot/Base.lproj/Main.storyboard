@@ -70,7 +70,7 @@
                                                         <constraint firstItem="Wdy-Sd-zVc" firstAttribute="top" secondItem="dBw-no-8GB" secondAttribute="top" constant="20" id="K4y-UZ-wsd"/>
                                                         <constraint firstAttribute="bottom" secondItem="Wdy-Sd-zVc" secondAttribute="bottom" constant="20" id="Upt-az-uCf"/>
                                                         <constraint firstAttribute="trailing" secondItem="Wdy-Sd-zVc" secondAttribute="trailing" constant="20" id="fUM-XJ-SNV"/>
-                                                        <constraint firstItem="Wdy-Sd-zVc" firstAttribute="width" secondItem="dBw-no-8GB" secondAttribute="width" multiplier="0.5" id="kry-cj-6Xg"/>
+                                                        <constraint firstItem="Wdy-Sd-zVc" firstAttribute="width" relation="lessThanOrEqual" secondItem="dBw-no-8GB" secondAttribute="width" multiplier="0.5" id="kry-cj-6Xg"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
@@ -95,7 +95,7 @@
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="sKw-MD-7X1" firstAttribute="leading" secondItem="BDq-YJ-e0i" secondAttribute="leading" constant="20" id="XXS-u6-R18"/>
-                                                        <constraint firstItem="sKw-MD-7X1" firstAttribute="width" secondItem="BDq-YJ-e0i" secondAttribute="width" multiplier="0.5" id="hiB-aZ-RLG"/>
+                                                        <constraint firstItem="sKw-MD-7X1" firstAttribute="width" relation="lessThanOrEqual" secondItem="BDq-YJ-e0i" secondAttribute="width" multiplier="0.5" id="hiB-aZ-RLG"/>
                                                         <constraint firstAttribute="bottom" secondItem="sKw-MD-7X1" secondAttribute="bottom" constant="20" id="qvi-lD-9Wy"/>
                                                         <constraint firstItem="sKw-MD-7X1" firstAttribute="top" secondItem="BDq-YJ-e0i" secondAttribute="top" constant="20" id="wpP-JO-vgo"/>
                                                     </constraints>

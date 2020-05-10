@@ -18,8 +18,9 @@ enum SenderType {
 
 class ViewController: UIViewController {
 
-    var recordsArray = Array<Any>()
     var data = Array<[SenderType: Any]>()
+    
+    let nlpManager = NLPManager.shared
     
     @IBOutlet weak var bottomEditView: UIVisualEffectView!
     @IBOutlet weak var loaderView: LoaderView!
@@ -32,8 +33,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         loadCSVFile()
-        data.append([.computer: "Hi! I'm your chatbot. What is your name? Hi! I'm your chatbot. What is your name? Hi! I'm your chatbot. What is your name? Hi! I'm your chatbot. What is your name?"])
-        data.append([.user: "Hi! I'm Subhashini. Just trying some new stuff!!!"])
+        data.append([.computer: "Hi! I'm your chatbot. What is your name?"])
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.allowsSelection = false
@@ -45,12 +46,18 @@ class ViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShowOrHide), name: UIResponder.keyboardDidShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShowOrHide), name: UIResponder.keyboardDidHideNotification, object: nil)
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func keyboardDidShowOrHide(_ notification: Notification) {
+        tableView.scrollToRow(at: IndexPath(row: data.count - 1, section: 0), at: .bottom, animated: false)
     }
     
     @objc func handleKeyboardNotification(_ notification: Notification) {
@@ -84,7 +91,7 @@ class ViewController: UIViewController {
                 ////                    print(record["Confirmed"]) // prints "Harry" on first, "Hermione" on second run
                 ////                    print(record["ConfirmedChange"]) // prints "Potter" on first, "Granger" on second run
                 //                }
-                self.recordsArray = importedRecords
+                self.nlpManager.recordsArray = importedRecords
                 DispatchQueue.main.async {
                     self.loaderView.isHidden = true
                 }
@@ -93,8 +100,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func btnSendPressed(_ sender: Any) {
-        textField.text = ""
+        if let message = textField.text {
+            data.append([.user: message])
+            textField.text = ""
+        }
         textField.resignFirstResponder()
+        tableView.reloadData()
+
     }
     
     

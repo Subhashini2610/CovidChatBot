@@ -13,7 +13,8 @@ import UIKit
 class NLPManager {
     
     public static var shared = NLPManager()
-    
+    var recordsArray = Array<Any>()
+
     let tagger = NSLinguisticTagger(tagSchemes: [.tokenType, .language, .lexicalClass, .nameType, .lemma], options: 0)
 
     let options: NSLinguisticTagger.Options = [.omitPunctuation, .omitWhitespace, .joinNames]
