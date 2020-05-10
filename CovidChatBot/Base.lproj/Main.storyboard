@@ -150,6 +150,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="uJX-W8-24W" firstAttribute="top" secondItem="fYJ-qD-L7i" secondAttribute="bottom" id="0Nl-GS-nt4"/>
+                                    <constraint firstAttribute="bottom" secondItem="94m-Xf-iOp" secondAttribute="bottom" id="4xv-vS-Aoj"/>
                                     <constraint firstAttribute="trailing" secondItem="94m-Xf-iOp" secondAttribute="trailing" id="AiQ-Up-KoA"/>
                                     <constraint firstAttribute="trailing" secondItem="fYJ-qD-L7i" secondAttribute="trailing" id="Efo-6E-N3f"/>
                                     <constraint firstItem="fYJ-qD-L7i" firstAttribute="top" secondItem="zn3-ba-IS7" secondAttribute="top" id="FBl-OI-xxn"/>
@@ -162,7 +163,6 @@
                                     <constraint firstItem="H0k-bB-g9x" firstAttribute="top" secondItem="zn3-ba-IS7" secondAttribute="top" id="pTw-t1-kwm"/>
                                     <constraint firstAttribute="bottom" secondItem="uJX-W8-24W" secondAttribute="bottom" id="q1T-RI-EYX"/>
                                     <constraint firstAttribute="trailing" secondItem="H0k-bB-g9x" secondAttribute="trailing" id="uYm-IT-9Wn"/>
-                                    <constraint firstItem="94m-Xf-iOp" firstAttribute="bottom" secondItem="uJX-W8-24W" secondAttribute="bottom" id="vCg-uG-s0h"/>
                                     <constraint firstItem="uJX-W8-24W" firstAttribute="trailing" secondItem="fYJ-qD-L7i" secondAttribute="trailing" id="wVV-17-DKh"/>
                                 </constraints>
                             </view>
@@ -177,6 +177,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="bottomConstraint" destination="q1T-RI-EYX" id="XH8-Fg-BFg"/>
                         <outlet property="bottomEditView" destination="uJX-W8-24W" id="Dsa-oA-r1B"/>
                         <outlet property="btnSend" destination="Yh2-N4-fao" id="Qsg-ZM-z3H"/>
                         <outlet property="loaderView" destination="H0k-bB-g9x" id="kh0-Wq-8rT"/>
