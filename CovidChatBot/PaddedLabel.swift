@@ -18,6 +18,8 @@ import UIKit
     override func drawText(in rect: CGRect) {
         let insets = UIEdgeInsets(top: topInset, left: leftInset, bottom: bottomInset, right: rightInset)
         super.drawText(in: rect.inset(by: insets))
+        layer.masksToBounds = true
+        layer.cornerRadius = 8.0
     }
 
     override var intrinsicContentSize: CGSize {

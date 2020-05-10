@@ -41,6 +41,8 @@ class ViewController: UIViewController {
         tableView.separatorStyle = .none
         tableView.backgroundColor = .clear
         
+        textField.delegate = self
+        
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: UIResponder.keyboardWillHideNotification, object: nil)
         
@@ -91,6 +93,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func btnSendPressed(_ sender: Any) {
+        textField.text = ""
         textField.resignFirstResponder()
     }
     
@@ -136,6 +139,13 @@ extension ViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.resignFirstResponder()
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.text = ""
+        textField.resignFirstResponder()
+        return true
+    }
+    
 }
 
 
@@ -144,8 +154,7 @@ class UserTableViewCell: UITableViewCell {
     
     func setupUI() {
         self.backgroundColor = .clear
-        messageLabel.layer.masksToBounds = true
-        messageLabel.layer.cornerRadius = 8.0
+        
     }
 }
 
@@ -154,8 +163,7 @@ class ComputerTableViewCell: UITableViewCell {
     
     func setupUI() {
         self.backgroundColor = .clear
-        messageLabel.layer.masksToBounds = true
-        messageLabel.layer.cornerRadius = 8.0
+        
     }
 }
 
