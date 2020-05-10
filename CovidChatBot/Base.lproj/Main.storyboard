@@ -15,49 +15,135 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H0k-bB-g9x" customClass="LoaderView" customModule="CovidChatBot" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zn3-ba-IS7">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="I19-PT-mcu">
-                                        <rect key="frame" x="0.0" y="327" width="414" height="164"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </activityIndicatorView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading Covid 19 Info..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0C-ei-ULv">
-                                        <rect key="frame" x="0.0" y="164.5" width="414" height="122.5"/>
-                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H0k-bB-g9x" customClass="LoaderView" customModule="CovidChatBot" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <subviews>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="I19-PT-mcu">
+                                                <rect key="frame" x="0.0" y="327" width="414" height="164"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </activityIndicatorView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading Covid 19 Info... Might take around 10 sec..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0C-ei-ULv">
+                                                <rect key="frame" x="0.0" y="164.5" width="414" height="122.5"/>
+                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Z0C-ei-ULv" firstAttribute="height" secondItem="H0k-bB-g9x" secondAttribute="height" multiplier="0.15" id="7dN-ki-0ra"/>
+                                            <constraint firstItem="I19-PT-mcu" firstAttribute="height" secondItem="H0k-bB-g9x" secondAttribute="height" multiplier="0.2" id="AY1-KB-ff8"/>
+                                            <constraint firstItem="I19-PT-mcu" firstAttribute="centerY" secondItem="H0k-bB-g9x" secondAttribute="centerY" id="JWA-Kg-sOI"/>
+                                            <constraint firstItem="I19-PT-mcu" firstAttribute="top" secondItem="Z0C-ei-ULv" secondAttribute="bottom" constant="40" id="ZQd-A8-ym9"/>
+                                            <constraint firstItem="Z0C-ei-ULv" firstAttribute="leading" secondItem="H0k-bB-g9x" secondAttribute="leading" id="bUx-4t-oJc"/>
+                                            <constraint firstItem="I19-PT-mcu" firstAttribute="leading" secondItem="H0k-bB-g9x" secondAttribute="leading" id="lVI-Bc-i6N"/>
+                                            <constraint firstAttribute="trailing" secondItem="Z0C-ei-ULv" secondAttribute="trailing" id="qeq-G9-H0q"/>
+                                            <constraint firstAttribute="trailing" secondItem="I19-PT-mcu" secondAttribute="trailing" id="t8B-Zu-2Ql"/>
+                                        </constraints>
+                                    </view>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="94m-Xf-iOp">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                    </imageView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fYJ-qD-L7i">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserCell" rowHeight="124" id="o3o-m9-ew8" customClass="UserTableViewCell" customModule="CovidChatBot" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="414" height="124"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o3o-m9-ew8" id="dBw-no-8GB">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="124"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label afdgd jeyfdb sjdggd shdbd dkjfhgd Label afdgd jeyfdb sjdggd shdbd dkjfhgd Label afdgd jeyfdb sjdggd shdbd dkjfhgd" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wdy-Sd-zVc" customClass="PaddedLabel" customModule="CovidChatBot" customModuleProvider="target">
+                                                            <rect key="frame" x="187" y="20" width="207" height="84"/>
+                                                            <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="Wdy-Sd-zVc" firstAttribute="top" secondItem="dBw-no-8GB" secondAttribute="top" constant="20" id="K4y-UZ-wsd"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Wdy-Sd-zVc" secondAttribute="bottom" constant="20" id="Upt-az-uCf"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Wdy-Sd-zVc" secondAttribute="trailing" constant="20" id="fUM-XJ-SNV"/>
+                                                        <constraint firstItem="Wdy-Sd-zVc" firstAttribute="width" secondItem="dBw-no-8GB" secondAttribute="width" multiplier="0.5" id="kry-cj-6Xg"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="messageLabel" destination="Wdy-Sd-zVc" id="TKm-zu-gdJ"/>
+                                                </connections>
+                                            </tableViewCell>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ComputerCell" rowHeight="138" id="iei-23-0jS" customClass="ComputerTableViewCell" customModule="CovidChatBot" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="152" width="414" height="138"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iei-23-0jS" id="BDq-YJ-e0i">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="138"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKw-MD-7X1" customClass="PaddedLabel" customModule="CovidChatBot" customModuleProvider="target">
+                                                            <rect key="frame" x="20" y="20" width="207" height="98"/>
+                                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <string key="text">Label afdgd jeyfdb sjdggd shdbd dkjfhgd Label afdgd jeyfdb sjdggd shdbd dkjfhgd Label afdgd jeyfdb sjdggd shdbd dkjfhgd Label afdgd jeyfdb sjdggd shdbd dkjfhgd Label afdgd jeyfdb sjdggd shdbd dkjfhgd Label afdgd jeyfdb sjdggd shdbd dkjfhgd</string>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="sKw-MD-7X1" firstAttribute="leading" secondItem="BDq-YJ-e0i" secondAttribute="leading" constant="20" id="XXS-u6-R18"/>
+                                                        <constraint firstItem="sKw-MD-7X1" firstAttribute="width" secondItem="BDq-YJ-e0i" secondAttribute="width" multiplier="0.5" id="hiB-aZ-RLG"/>
+                                                        <constraint firstAttribute="bottom" secondItem="sKw-MD-7X1" secondAttribute="bottom" constant="20" id="qvi-lD-9Wy"/>
+                                                        <constraint firstItem="sKw-MD-7X1" firstAttribute="top" secondItem="BDq-YJ-e0i" secondAttribute="top" constant="20" id="wpP-JO-vgo"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="messageLabel" destination="sKw-MD-7X1" id="713-2C-5fr"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstItem="Z0C-ei-ULv" firstAttribute="height" secondItem="H0k-bB-g9x" secondAttribute="height" multiplier="0.15" id="7dN-ki-0ra"/>
-                                    <constraint firstItem="I19-PT-mcu" firstAttribute="height" secondItem="H0k-bB-g9x" secondAttribute="height" multiplier="0.2" id="AY1-KB-ff8"/>
-                                    <constraint firstItem="I19-PT-mcu" firstAttribute="centerY" secondItem="H0k-bB-g9x" secondAttribute="centerY" id="JWA-Kg-sOI"/>
-                                    <constraint firstItem="I19-PT-mcu" firstAttribute="top" secondItem="Z0C-ei-ULv" secondAttribute="bottom" constant="40" id="ZQd-A8-ym9"/>
-                                    <constraint firstItem="Z0C-ei-ULv" firstAttribute="leading" secondItem="H0k-bB-g9x" secondAttribute="leading" id="bUx-4t-oJc"/>
-                                    <constraint firstItem="I19-PT-mcu" firstAttribute="leading" secondItem="H0k-bB-g9x" secondAttribute="leading" id="lVI-Bc-i6N"/>
-                                    <constraint firstAttribute="trailing" secondItem="Z0C-ei-ULv" secondAttribute="trailing" id="qeq-G9-H0q"/>
-                                    <constraint firstAttribute="trailing" secondItem="I19-PT-mcu" secondAttribute="trailing" id="t8B-Zu-2Ql"/>
+                                    <constraint firstAttribute="trailing" secondItem="94m-Xf-iOp" secondAttribute="trailing" id="AiQ-Up-KoA"/>
+                                    <constraint firstAttribute="bottom" secondItem="94m-Xf-iOp" secondAttribute="bottom" id="Bcc-eP-FNl"/>
+                                    <constraint firstAttribute="trailing" secondItem="fYJ-qD-L7i" secondAttribute="trailing" id="Efo-6E-N3f"/>
+                                    <constraint firstItem="fYJ-qD-L7i" firstAttribute="top" secondItem="zn3-ba-IS7" secondAttribute="top" id="FBl-OI-xxn"/>
+                                    <constraint firstItem="H0k-bB-g9x" firstAttribute="leading" secondItem="zn3-ba-IS7" secondAttribute="leading" id="JMy-ht-Wgc"/>
+                                    <constraint firstItem="fYJ-qD-L7i" firstAttribute="leading" secondItem="zn3-ba-IS7" secondAttribute="leading" id="NTh-84-JzR"/>
+                                    <constraint firstAttribute="bottom" secondItem="H0k-bB-g9x" secondAttribute="bottom" id="R2R-dx-M4m"/>
+                                    <constraint firstItem="94m-Xf-iOp" firstAttribute="top" secondItem="zn3-ba-IS7" secondAttribute="top" id="Uhb-oL-1Y2"/>
+                                    <constraint firstAttribute="bottom" secondItem="fYJ-qD-L7i" secondAttribute="bottom" id="WWa-0m-chd"/>
+                                    <constraint firstItem="94m-Xf-iOp" firstAttribute="leading" secondItem="zn3-ba-IS7" secondAttribute="leading" id="nLW-O1-U2w"/>
+                                    <constraint firstItem="H0k-bB-g9x" firstAttribute="top" secondItem="zn3-ba-IS7" secondAttribute="top" id="pTw-t1-kwm"/>
+                                    <constraint firstAttribute="trailing" secondItem="H0k-bB-g9x" secondAttribute="trailing" id="uYm-IT-9Wn"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="H0k-bB-g9x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Fgc-zZ-8cu"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="H0k-bB-g9x" secondAttribute="bottom" id="KuG-cg-wO3"/>
-                            <constraint firstItem="H0k-bB-g9x" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="SQj-VV-zqB"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="H0k-bB-g9x" secondAttribute="trailing" id="fIA-Pl-UOq"/>
+                            <constraint firstItem="zn3-ba-IS7" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="01w-Xl-vlY"/>
+                            <constraint firstItem="zn3-ba-IS7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="15r-6N-Lqf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="zn3-ba-IS7" secondAttribute="top" id="9WU-ht-st1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="leading" secondItem="zn3-ba-IS7" secondAttribute="leading" id="Ri9-Z9-6sV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="loaderView" destination="H0k-bB-g9x" id="kh0-Wq-8rT"/>
+                        <outlet property="tableView" destination="fYJ-qD-L7i" id="NJp-rs-gMy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="114"/>
+            <point key="canvasLocation" x="137.68115942028987" y="113.83928571428571"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="backgroundImage" width="868" height="1466"/>
+    </resources>
 </document>
