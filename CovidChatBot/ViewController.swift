@@ -103,12 +103,14 @@ class ViewController: UIViewController {
         if let message = textField.text {
             data.append([.user: message])
             textField.text = ""
+            textField.resignFirstResponder()
+            tableView.reloadData()
+            if let computerReply = nlpManager.processText(message: message) {
+                data.append([.computer: computerReply])
+                tableView.reloadData()
+            }
         }
-        textField.resignFirstResponder()
-        tableView.reloadData()
-
     }
-    
     
 }
 

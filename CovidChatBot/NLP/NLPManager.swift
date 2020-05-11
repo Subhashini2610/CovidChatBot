@@ -60,9 +60,9 @@ class NLPManager {
         }
     }
 
-    func namedEntity(input: String) {
+    func namedEntity(input: String) -> [String: String] {
         tagger.string = input
-        
+        var entities = [String: String]()
         let tags: [NSLinguisticTag] = [.personalName, .placeName, .organizationName]
         
         let range = NSRange(location: 0, length: tagger.string!.count)
@@ -70,9 +70,27 @@ class NLPManager {
         tagger.enumerateTags(in: range, unit: .word, scheme: .nameType, options: options) { (tag, tokenRange, _) in
             if let tag = tag, tags.contains(tag) {
                 let name = (input as NSString).substring(with: tokenRange)
-                print("\(name) : \(tag.rawValue)")
+//                print("\(name) : \(tag.rawValue)")
+                entities[tag.rawValue] = name
             }
         }
+        return entities
+    }
+    
+    func processText(message: String) -> String? {
+        let entities = namedEntity(input: message)
+        let replyMessage = processEntities(entities: entities)
+        return replyMessage
+    }
+    
+    private func processEntities(entities: [String: String]) -> String? {
+        let entityNames = Array(entities.keys)
+        if entityNames.contains("PersonalName") {
+            if let username = entities["PersonalName"] {
+                return "Hi \(username)! How can I help you?"
+            }
+        }
+        return nil
     }
 }
 
