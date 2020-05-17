@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CSVImporter
 
 //TODO: loader to be seen initially
 
@@ -23,7 +22,6 @@ class ViewController: UIViewController {
     let nlpManager = NLPManager.shared
     
     @IBOutlet weak var bottomEditView: UIVisualEffectView!
-    @IBOutlet weak var loaderView: LoaderView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var btnSend: UIButton!
@@ -32,7 +30,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        loadCSVFile()
         data.append([.computer: "Hi! I'm your chatbot. What is your name?"])
         
         tableView.delegate = self
@@ -70,32 +67,6 @@ class ViewController: UIViewController {
             UIView.animate(withDuration: 0.5, animations: { () -> Void in
                 self.view.layoutIfNeeded()
             })
-        }
-    }
-    
-    func loadCSVFile() {
-        DispatchQueue.main.async {
-            self.loaderView.isHidden = false
-        }
-        if let csvPath = Bundle.main.path(forResource: "Bing-COVID19-Data", ofType: "csv") {
-            let importer = CSVImporter<[String: String]>(path: csvPath)
-            importer.startImportingRecords(structure: { (headerValues) -> Void in
-                
-                print(headerValues)
-                
-            }) { $0 }.onFinish { importedRecords in
-                
-                //                for record in importedRecords {
-                //                    // a record is now a Dictionary with the header values as keys
-                ////                    print(record) // => e.g. ["firstName": "Harry", "lastName": "Potter"]
-                ////                    print(record["Confirmed"]) // prints "Harry" on first, "Hermione" on second run
-                ////                    print(record["ConfirmedChange"]) // prints "Potter" on first, "Granger" on second run
-                //                }
-                self.nlpManager.recordsArray = importedRecords
-                DispatchQueue.main.async {
-                    self.loaderView.isHidden = true
-                }
-            }
         }
     }
     

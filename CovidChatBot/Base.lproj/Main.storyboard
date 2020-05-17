@@ -18,32 +18,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zn3-ba-IS7">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H0k-bB-g9x" customClass="LoaderView" customModule="CovidChatBot" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                        <subviews>
-                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="I19-PT-mcu">
-                                                <rect key="frame" x="0.0" y="227" width="320" height="114"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </activityIndicatorView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading Covid 19 Info... Might take around 10 sec..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0C-ei-ULv">
-                                                <rect key="frame" x="0.0" y="102" width="320" height="85"/>
-                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="Z0C-ei-ULv" firstAttribute="height" secondItem="H0k-bB-g9x" secondAttribute="height" multiplier="0.15" id="7dN-ki-0ra"/>
-                                            <constraint firstItem="I19-PT-mcu" firstAttribute="height" secondItem="H0k-bB-g9x" secondAttribute="height" multiplier="0.2" id="AY1-KB-ff8"/>
-                                            <constraint firstItem="I19-PT-mcu" firstAttribute="centerY" secondItem="H0k-bB-g9x" secondAttribute="centerY" id="JWA-Kg-sOI"/>
-                                            <constraint firstItem="I19-PT-mcu" firstAttribute="top" secondItem="Z0C-ei-ULv" secondAttribute="bottom" constant="40" id="ZQd-A8-ym9"/>
-                                            <constraint firstItem="Z0C-ei-ULv" firstAttribute="leading" secondItem="H0k-bB-g9x" secondAttribute="leading" id="bUx-4t-oJc"/>
-                                            <constraint firstItem="I19-PT-mcu" firstAttribute="leading" secondItem="H0k-bB-g9x" secondAttribute="leading" id="lVI-Bc-i6N"/>
-                                            <constraint firstAttribute="trailing" secondItem="Z0C-ei-ULv" secondAttribute="trailing" id="qeq-G9-H0q"/>
-                                            <constraint firstAttribute="trailing" secondItem="I19-PT-mcu" secondAttribute="trailing" id="t8B-Zu-2Ql"/>
-                                        </constraints>
-                                    </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="94m-Xf-iOp">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                     </imageView>
@@ -154,15 +128,11 @@
                                     <constraint firstAttribute="trailing" secondItem="94m-Xf-iOp" secondAttribute="trailing" id="AiQ-Up-KoA"/>
                                     <constraint firstAttribute="trailing" secondItem="fYJ-qD-L7i" secondAttribute="trailing" id="Efo-6E-N3f"/>
                                     <constraint firstItem="fYJ-qD-L7i" firstAttribute="top" secondItem="zn3-ba-IS7" secondAttribute="top" id="FBl-OI-xxn"/>
-                                    <constraint firstItem="H0k-bB-g9x" firstAttribute="leading" secondItem="zn3-ba-IS7" secondAttribute="leading" id="JMy-ht-Wgc"/>
                                     <constraint firstItem="fYJ-qD-L7i" firstAttribute="leading" secondItem="zn3-ba-IS7" secondAttribute="leading" id="NTh-84-JzR"/>
                                     <constraint firstItem="uJX-W8-24W" firstAttribute="leading" secondItem="fYJ-qD-L7i" secondAttribute="leading" id="NVQ-4N-BV7"/>
-                                    <constraint firstAttribute="bottom" secondItem="H0k-bB-g9x" secondAttribute="bottom" id="R2R-dx-M4m"/>
                                     <constraint firstItem="94m-Xf-iOp" firstAttribute="top" secondItem="zn3-ba-IS7" secondAttribute="top" id="Uhb-oL-1Y2"/>
                                     <constraint firstItem="94m-Xf-iOp" firstAttribute="leading" secondItem="zn3-ba-IS7" secondAttribute="leading" id="nLW-O1-U2w"/>
-                                    <constraint firstItem="H0k-bB-g9x" firstAttribute="top" secondItem="zn3-ba-IS7" secondAttribute="top" id="pTw-t1-kwm"/>
                                     <constraint firstAttribute="bottom" secondItem="uJX-W8-24W" secondAttribute="bottom" id="q1T-RI-EYX"/>
-                                    <constraint firstAttribute="trailing" secondItem="H0k-bB-g9x" secondAttribute="trailing" id="uYm-IT-9Wn"/>
                                     <constraint firstItem="uJX-W8-24W" firstAttribute="trailing" secondItem="fYJ-qD-L7i" secondAttribute="trailing" id="wVV-17-DKh"/>
                                 </constraints>
                             </view>
@@ -180,7 +150,6 @@
                         <outlet property="bottomConstraint" destination="q1T-RI-EYX" id="XH8-Fg-BFg"/>
                         <outlet property="bottomEditView" destination="uJX-W8-24W" id="Dsa-oA-r1B"/>
                         <outlet property="btnSend" destination="Yh2-N4-fao" id="Qsg-ZM-z3H"/>
-                        <outlet property="loaderView" destination="H0k-bB-g9x" id="kh0-Wq-8rT"/>
                         <outlet property="tableView" destination="fYJ-qD-L7i" id="NJp-rs-gMy"/>
                         <outlet property="textField" destination="Sc2-Ag-Prr" id="fm6-jV-7IL"/>
                     </connections>

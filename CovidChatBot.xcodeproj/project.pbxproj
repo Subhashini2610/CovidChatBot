@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,11 +13,10 @@
 		3022C74D24682F7100D7A23F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3022C74B24682F7100D7A23F /* Main.storyboard */; };
 		3022C74F24682F7700D7A23F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3022C74E24682F7700D7A23F /* Assets.xcassets */; };
 		3022C75224682F7700D7A23F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3022C75024682F7700D7A23F /* LaunchScreen.storyboard */; };
-		3022C75C246832E600D7A23F /* CSVImporter in Frameworks */ = {isa = PBXBuildFile; productRef = 3022C75B246832E600D7A23F /* CSVImporter */; };
-		3022C75E246832FC00D7A23F /* Bing-COVID19-Data.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3022C75D246832FC00D7A23F /* Bing-COVID19-Data.csv */; };
-		3022C76024683C5A00D7A23F /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3022C75F24683C5A00D7A23F /* LoaderView.swift */; };
 		3022C76324683EBC00D7A23F /* NLPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3022C76224683EBC00D7A23F /* NLPManager.swift */; };
 		3022C76724684F8700D7A23F /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3022C76624684F8700D7A23F /* PaddedLabel.swift */; };
+		30268FED2469A99A004E594B /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30268FEC2469A99A004E594B /* DBManager.swift */; };
+		30C4562824712B8C003C6F38 /* Data.db in Resources */ = {isa = PBXBuildFile; fileRef = 30C4562724712B8B003C6F38 /* Data.db */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,10 +28,10 @@
 		3022C74E24682F7700D7A23F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3022C75124682F7700D7A23F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3022C75324682F7700D7A23F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3022C75D246832FC00D7A23F /* Bing-COVID19-Data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Bing-COVID19-Data.csv"; sourceTree = "<group>"; };
-		3022C75F24683C5A00D7A23F /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		3022C76224683EBC00D7A23F /* NLPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NLPManager.swift; sourceTree = "<group>"; };
 		3022C76624684F8700D7A23F /* PaddedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedLabel.swift; sourceTree = "<group>"; };
+		30268FEC2469A99A004E594B /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		30C4562724712B8B003C6F38 /* Data.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Data.db; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +39,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3022C75C246832E600D7A23F /* CSVImporter in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,13 +64,13 @@
 		3022C74424682F7100D7A23F /* CovidChatBot */ = {
 			isa = PBXGroup;
 			children = (
+				30268FEB2469A986004E594B /* DBManager */,
 				3022C76124683EA100D7A23F /* NLP */,
 				3022C75924682FAB00D7A23F /* Resources */,
 				3022C74524682F7100D7A23F /* AppDelegate.swift */,
 				3022C74724682F7100D7A23F /* SceneDelegate.swift */,
 				3022C74924682F7100D7A23F /* ViewController.swift */,
 				3022C74B24682F7100D7A23F /* Main.storyboard */,
-				3022C75F24683C5A00D7A23F /* LoaderView.swift */,
 				3022C74E24682F7700D7A23F /* Assets.xcassets */,
 				3022C75024682F7700D7A23F /* LaunchScreen.storyboard */,
 				3022C75324682F7700D7A23F /* Info.plist */,
@@ -84,7 +82,7 @@
 		3022C75924682FAB00D7A23F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3022C75D246832FC00D7A23F /* Bing-COVID19-Data.csv */,
+				30C4562724712B8B003C6F38 /* Data.db */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -95,6 +93,14 @@
 				3022C76224683EBC00D7A23F /* NLPManager.swift */,
 			);
 			path = NLP;
+			sourceTree = "<group>";
+		};
+		30268FEB2469A986004E594B /* DBManager */ = {
+			isa = PBXGroup;
+			children = (
+				30268FEC2469A99A004E594B /* DBManager.swift */,
+			);
+			path = DBManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -114,7 +120,6 @@
 			);
 			name = CovidChatBot;
 			packageProductDependencies = (
-				3022C75B246832E600D7A23F /* CSVImporter */,
 			);
 			productName = CovidChatBot;
 			productReference = 3022C74224682F7100D7A23F /* CovidChatBot.app */;
@@ -145,7 +150,6 @@
 			);
 			mainGroup = 3022C73924682F7100D7A23F;
 			packageReferences = (
-				3022C75A246832E600D7A23F /* XCRemoteSwiftPackageReference "CSVImporter" */,
 			);
 			productRefGroup = 3022C74324682F7100D7A23F /* Products */;
 			projectDirPath = "";
@@ -161,9 +165,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30C4562824712B8C003C6F38 /* Data.db in Resources */,
 				3022C75224682F7700D7A23F /* LaunchScreen.storyboard in Resources */,
 				3022C74F24682F7700D7A23F /* Assets.xcassets in Resources */,
-				3022C75E246832FC00D7A23F /* Bing-COVID19-Data.csv in Resources */,
 				3022C74D24682F7100D7A23F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,10 +181,10 @@
 			files = (
 				3022C76724684F8700D7A23F /* PaddedLabel.swift in Sources */,
 				3022C74A24682F7100D7A23F /* ViewController.swift in Sources */,
-				3022C76024683C5A00D7A23F /* LoaderView.swift in Sources */,
 				3022C74624682F7100D7A23F /* AppDelegate.swift in Sources */,
 				3022C74824682F7100D7A23F /* SceneDelegate.swift in Sources */,
 				3022C76324683EBC00D7A23F /* NLPManager.swift in Sources */,
+				30268FED2469A99A004E594B /* DBManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +331,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CovidChatBot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -346,6 +351,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CovidChatBot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -380,25 +386,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		3022C75A246832E600D7A23F /* XCRemoteSwiftPackageReference "CSVImporter" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Flinesoft/CSVImporter.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.9.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		3022C75B246832E600D7A23F /* CSVImporter */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3022C75A246832E600D7A23F /* XCRemoteSwiftPackageReference "CSVImporter" */;
-			productName = CSVImporter;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3022C73A24682F7100D7A23F /* Project object */;
 }
