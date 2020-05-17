@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        data.append([.computer: "Hi! I'm your chatbot. What is your name?"])
+        data.append([.computer: "Hi! I'm your ChatBuddy. What is your name?"])
         
         tableView.delegate = self
         tableView.dataSource = self

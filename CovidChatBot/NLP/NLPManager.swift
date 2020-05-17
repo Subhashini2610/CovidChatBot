@@ -63,15 +63,21 @@ class NLPManager {
     func namedEntity(input: String) -> [String: String] {
         tagger.string = input
         var entities = [String: String]()
-        let tags: [NSLinguisticTag] = [.personalName, .placeName, .organizationName]
         
         let range = NSRange(location: 0, length: tagger.string!.count)
         
-        tagger.enumerateTags(in: range, unit: .word, scheme: .nameType, options: options) { (tag, tokenRange, _) in
-            if let tag = tag, tags.contains(tag) {
+        tagger.enumerateTags(in: range, unit: .word, scheme: .lexicalClass, options: options) { (tag, tokenRange, _) in
+            if let tag = tag {
                 let name = (input as NSString).substring(with: tokenRange)
-//                print("\(name) : \(tag.rawValue)")
-                entities[tag.rawValue] = name
+                if tag == .noun {
+                    tagger.enumerateTags(in: tokenRange, unit: .word, scheme: .nameType, options: options) { (nameTag, nameTokenRange, _) in
+                        if let name = nameTag {
+                            entities[name.rawValue] = (input as NSString).substring(with: tokenRange)
+                        }
+                    }
+                } else {
+                    entities[tag.rawValue] = name
+                }
             }
         }
         return entities
@@ -89,6 +95,10 @@ class NLPManager {
             if let username = entities["PersonalName"] {
                 return "Hi \(username)! How can I help you?"
             }
+        } else if entityNames.contains("PlaceName") && entityNames.contains("Verb"){
+            DBManager.shared.readFromDB()
+        } else {
+            return "Sorry... I could not understand that. My knowledge is limited to the subject of Covid. Please ask accordingly."
         }
         return nil
     }
