@@ -73,12 +73,60 @@ class DBManager {
 //    }
     
     func readValuesFromDB(subject: String, place: String) -> String? {
+        let count: String? = nil
+        if let districtValue = readValuesForDistrict(subject: subject, place: place), districtValue.count > 0 {
+            return districtValue
+        } else if let stateCount = readValuesForState(subject: subject, place: place), stateCount.count > 0 {
+            return stateCount
+        } else if let countryCount = readValuesForCountry(subject: subject, place: place), countryCount.count > 0 {
+            return countryCount
+        }
+        return count
+    }
+    
+    private func readValuesForCountry(subject: String, place: String) -> String? {
         var count: String?
         if let dbQueue = dbQueue {
             do {
                 try dbQueue.read { db in
                     // Fetch for country
-                    let rows = try Row.fetchCursor(db, sql: "SELECT \(subject) FROM CovidData where Country_Region = '\(place)' and AdminRegion1 = '' order by Updated desc limit 1")
+                    let rows = try Row.fetchCursor(db, sql: "SELECT \(subject) FROM CovidData where Country_Region like '%\(place)%' and AdminRegion1 = '' order by Updated desc limit 1")
+                    while let row = try rows.next() {
+                        count = row[subject]
+                    }
+                }
+            } catch  {
+                print("DB fetch error")
+            }
+        }
+        return count
+    }
+    
+    private func readValuesForState(subject: String, place: String) -> String? {
+        var count: String?
+        if let dbQueue = dbQueue {
+            do {
+                try dbQueue.read { db in
+                    // Fetch for country
+                    let rows = try Row.fetchCursor(db, sql: "SELECT \(subject) FROM CovidData where AdminRegion1 like '%\(place)%' and AdminRegion2 = '' order by Updated desc limit 1")
+                    while let row = try rows.next() {
+                        count = row[subject]
+                    }
+                }
+            } catch  {
+                print("DB fetch error")
+            }
+        }
+        return count
+    }
+    
+    private func readValuesForDistrict(subject: String, place: String) -> String? {
+        var count: String?
+        if let dbQueue = dbQueue {
+            do {
+                try dbQueue.read { db in
+                    // Fetch for country
+                    let rows = try Row.fetchCursor(db, sql: "SELECT \(subject) FROM CovidData where AdminRegion2 like '%\(place)%' order by Updated desc limit 1")
                     while let row = try rows.next() {
                         count = row[subject]
                     }

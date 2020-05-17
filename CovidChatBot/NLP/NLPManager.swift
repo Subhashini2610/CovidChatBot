@@ -102,12 +102,12 @@ class NLPManager {
             }
         } else if entityNames.contains("PlaceName") && entityNames.contains("Verb"){
             if let place = entities["PlaceName"]?.capitalized, let subject = mapEntities(entityName: entities["Verb"] ?? "") {
-                return processFromDB(subject: subject, place: place)
+                if let message = processFromDB(subject: subject, place: place), message.count > 0 {
+                    return message
+                }
             }
-        } else {
-            return "Sorry... I could not understand that. My knowledge is limited to the subject of Covid. Please ask accordingly."
         }
-        return nil
+        return "Sorry... I could not understand that. My knowledge is limited to the subject of Covid. Please ask accordingly."
     }
     
     func processFromDB(subject: SubjectType, place: String) -> String? {
@@ -119,10 +119,13 @@ class NLPManager {
     
     private func mapEntities(entityName: String) -> SubjectType? {
         if entityName.contains("onfirm") || entityName.contains("ffect") {
+            //confirmed or affected
             return .confirmed
         } else if entityName.contains("ead") || entityName.contains("ie") || entityName.contains("eath") {
+            //died or deaths or died
             return .died
         } else if entityName.contains("ecover") || entityName.contains("ure") {
+            //recovered or cured
             return .recovered
         } else {
             return nil
@@ -136,7 +139,7 @@ class NLPManager {
         case .died:
             return "The death count in " + place + " stands at " + count
         case .recovered:
-            return count + "people have recovered in " + place
+            return count + " people have recovered in " + place
         }
     }
 }
