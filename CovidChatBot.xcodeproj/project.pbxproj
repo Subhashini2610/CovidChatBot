@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,7 @@
 		3022C76724684F8700D7A23F /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3022C76624684F8700D7A23F /* PaddedLabel.swift */; };
 		30268FED2469A99A004E594B /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30268FEC2469A99A004E594B /* DBManager.swift */; };
 		30C4562824712B8C003C6F38 /* Data.db in Resources */ = {isa = PBXBuildFile; fileRef = 30C4562724712B8B003C6F38 /* Data.db */; };
+		30E09569247188720021D6B2 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 30E09568247188720021D6B2 /* GRDB */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30E09569247188720021D6B2 /* GRDB in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +122,7 @@
 			);
 			name = CovidChatBot;
 			packageProductDependencies = (
+				30E09568247188720021D6B2 /* GRDB */,
 			);
 			productName = CovidChatBot;
 			productReference = 3022C74224682F7100D7A23F /* CovidChatBot.app */;
@@ -150,6 +153,7 @@
 			);
 			mainGroup = 3022C73924682F7100D7A23F;
 			packageReferences = (
+				30E09567247188720021D6B2 /* XCRemoteSwiftPackageReference "GRDB.swift" */,
 			);
 			productRefGroup = 3022C74324682F7100D7A23F /* Products */;
 			projectDirPath = "";
@@ -386,6 +390,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		30E09567247188720021D6B2 /* XCRemoteSwiftPackageReference "GRDB.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/groue/GRDB.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.14.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		30E09568247188720021D6B2 /* GRDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 30E09567247188720021D6B2 /* XCRemoteSwiftPackageReference "GRDB.swift" */;
+			productName = GRDB;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3022C73A24682F7100D7A23F /* Project object */;
 }

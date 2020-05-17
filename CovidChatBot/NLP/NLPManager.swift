@@ -7,8 +7,13 @@
 //
 
 import Foundation
-
 import UIKit
+
+enum SubjectType: String {
+    case confirmed = "Confirmed"
+    case died = "Deaths"
+    case recovered = "Recovered"
+}
 
 class NLPManager {
     
@@ -96,20 +101,42 @@ class NLPManager {
                 return "Hi \(username)! How can I help you?"
             }
         } else if entityNames.contains("PlaceName") && entityNames.contains("Verb"){
-            DBManager.shared.readFromDB()
+            if let place = entities["PlaceName"]?.capitalized, let subject = mapEntities(entityName: entities["Verb"] ?? "") {
+                return processFromDB(subject: subject, place: place)
+            }
         } else {
             return "Sorry... I could not understand that. My knowledge is limited to the subject of Covid. Please ask accordingly."
         }
         return nil
     }
+    
+    func processFromDB(subject: SubjectType, place: String) -> String? {
+        if let count = DBManager.shared.readValuesFromDB(subject: subject.rawValue, place: place) {
+            return getFinalString(count: count, subject: subject, place: place)
+        }
+        return nil
+    }
+    
+    private func mapEntities(entityName: String) -> SubjectType? {
+        if entityName.contains("onfirm") || entityName.contains("ffect") {
+            return .confirmed
+        } else if entityName.contains("ead") || entityName.contains("ie") || entityName.contains("eath") {
+            return .died
+        } else if entityName.contains("ecover") || entityName.contains("ure") {
+            return .recovered
+        } else {
+            return nil
+        }
+    }
+    
+    private func getFinalString(count: String, subject: SubjectType, place: String) -> String{
+        switch subject {
+        case .confirmed:
+            return "The latest confirmed cases count stands at " + count + " in " + place
+        case .died:
+            return "The death count in " + place + " stands at " + count
+        case .recovered:
+            return count + "people have recovered in " + place
+        }
+    }
 }
-
-//languageIdentification()
-//print("*****************************************************")
-//tokenizeString()
-//print("*****************************************************")
-//lemmatizeString()
-//print("*****************************************************")
-//partOfSpeech()
-//print("*****************************************************")
-//namedEntity(str: "Gayathri works at Apple Inc")
