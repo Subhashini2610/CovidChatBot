@@ -90,7 +90,7 @@ class DBManager {
             do {
                 try dbQueue.read { db in
                     // Fetch for country
-                    let rows = try Row.fetchCursor(db, sql: "SELECT \(subject) FROM CovidData where Country_Region like '%\(place)%' and AdminRegion1 = '' order by Updated desc limit 1")
+                    let rows = try Row.fetchCursor(db, sql: "SELECT \(subject) FROM CovidData where (Country_Region like '\(place)' or Country_Region like '% \(place) %' or Country_Region like '\(place) %' or Country_Region like '% \(place)') and AdminRegion1 = '' order by Updated desc limit 1")
                     while let row = try rows.next() {
                         count = row[subject]
                     }
@@ -108,7 +108,7 @@ class DBManager {
             do {
                 try dbQueue.read { db in
                     // Fetch for country
-                    let rows = try Row.fetchCursor(db, sql: "SELECT \(subject) FROM CovidData where AdminRegion1 like '%\(place)%' and AdminRegion2 = '' order by Updated desc limit 1")
+                    let rows = try Row.fetchCursor(db, sql: "SELECT \(subject) FROM CovidData where (AdminRegion1 like '\(place)' or AdminRegion1 like '% \(place) %' or AdminRegion1 like '\(place) %' or AdminRegion1 like '% \(place)') and AdminRegion2 = '' order by Updated desc limit 1")
                     while let row = try rows.next() {
                         count = row[subject]
                     }
@@ -126,7 +126,7 @@ class DBManager {
             do {
                 try dbQueue.read { db in
                     // Fetch for country
-                    let rows = try Row.fetchCursor(db, sql: "SELECT \(subject) FROM CovidData where AdminRegion2 like '%\(place)%' order by Updated desc limit 1")
+                    let rows = try Row.fetchCursor(db, sql: "SELECT \(subject) FROM CovidData where AdminRegion2 like '\(place)' or AdminRegion2 like '% \(place) %' or AdminRegion2 like '\(place) %' or AdminRegion2 like '% \(place)' order by Updated desc limit 1")
                     while let row = try rows.next() {
                         count = row[subject]
                     }

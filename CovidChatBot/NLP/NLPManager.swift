@@ -100,8 +100,12 @@ class NLPManager {
             if let username = entities["PersonalName"] {
                 return "Hi \(username)! How can I help you?"
             }
-        } else if entityNames.contains("PlaceName") && entityNames.contains("Verb"){
+        } else if entityNames.contains("PlaceName") && (entityNames.contains("Verb") || entityNames.contains("OtherWord")){
             if let place = entities["PlaceName"]?.capitalized, let subject = mapEntities(entityName: entities["Verb"] ?? "") {
+                if let message = processFromDB(subject: subject, place: place), message.count > 0 {
+                    return message
+                }
+            } else if let place = entities["PlaceName"]?.capitalized, let sub = entities["OtherWord"], let subject = mapEntities(entityName: sub ) {
                 if let message = processFromDB(subject: subject, place: place), message.count > 0 {
                     return message
                 }
@@ -130,7 +134,7 @@ class NLPManager {
     }
     
     private func mapEntities(entityName: String) -> SubjectType? {
-        if entityName.contains("onfirm") || entityName.contains("ffect") {
+        if entityName.contains("onfirm") || entityName.contains("ffect") || entityName.contains("case") {
             //confirmed or affected
             return .confirmed
         } else if entityName.contains("ead") || entityName.contains("ie") || entityName.contains("eath") {
