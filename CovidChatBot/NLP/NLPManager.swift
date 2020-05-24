@@ -106,8 +106,20 @@ class NLPManager {
                     return message
                 }
             }
+        } else if entityNames.contains("OtherWord") || entityNames.contains("Adjective") {
+            if let otherWord = entities["OtherWord"] {
+                //for safety measures
+                if otherWord.hasPrefix("safe") || otherWord.hasPrefix("measur") {
+                    return "The motto during these difficult times is Stay Home Stay Safe. Please use sanitisers to keep your hands clean along with frequent washing of hands. Also, it is advisable to wear masks at all times when moving out of home.\n\nPlease use the Arogya Setu app to keep the Govt authorities informed in case of any health issues."
+                }
+            } else if let otherWord = entities["Adjective"] {
+                //for safety measures
+                if otherWord.hasPrefix("safe") || otherWord.hasPrefix("measur") {
+                    return "The motto during these difficult times is Stay Home Stay Safe. Please use sanitisers to keep your hands clean along with frequent washing of hands. Also, it is advisable to wear masks at all times when moving out of home.\n\nPlease use the Arogya Setu app to keep the Govt authorities informed in case of any health issues."
+                }
+            }
         }
-        return "Sorry... I could not understand that. My knowledge is limited to the subject of Covid. Please ask accordingly."
+        return "Sorry... I could not understand that. I am still learning and my knowledge is limited to the subject of Covid. Please ask accordingly."
     }
     
     func processFromDB(subject: SubjectType, place: String) -> String? {
